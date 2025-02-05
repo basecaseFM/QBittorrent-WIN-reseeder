@@ -60,7 +60,7 @@ $foundSTRING = Invoke-RestMethod -Uri "$qBittorrentUrl/api/v2/torrents/info" -Me
     "hashes" = $QBT_INFOHASH
 }
 # Add torrents to array object
-$torrentFiles = (Get-ChildItem -Filter *.torrent).FullName
+$torrentFiles = (Get-ChildItem  -Path "$currentDIR" -Filter *.torrent).FullName
 
 # Main loop for adding torrent or changing location
 if ( $foundSTRING -ne "") {
