@@ -38,17 +38,17 @@ Copy-Item $TORRENT_STORE\"$QBT_TORRENT_NAME"*.torrent "$NEW_DIR.$QBT_TORRENT_NAM
 
 # Create torrent-name.QBTmagnetLINK from the template file 
 #       QBittorrent-reseeder Linux file
-$content = [System.IO.File]::ReadAllText(".\template.QBTmagLINK.sh").Replace("NULL_NAME","""$QBT_TORRENT_NAME""").Replace("NULL_HASH","$QBT_INFOHASH")
+$content = [System.IO.File]::ReadAllText("C:\Program Files\qBittorrent\template.QBTmagLINK.sh").Replace("NULL_NAME","""$QBT_TORRENT_NAME""").Replace("NULL_HASH","$QBT_INFOHASH")
 [System.IO.File]::WriteAllText("$NEW_DIR.$QBT_TORRENT_NAME.QBTmagnetLINK", $content)
 
 # Create torrent-name.magnetLINK from the template file 
 #       TRANSMISSION-reseeder linux file
-$TRANSMISSION = [System.IO.File]::ReadAllText(".\template.magLINK.sh").Replace("NULL_NAME","""$QBT_TORRENT_NAME""").Replace("NULL_HASH","$QBT_INFOHASH")
+$TRANSMISSION = [System.IO.File]::ReadAllText("C:\Program Files\qBittorrent\template.magLINK.sh").Replace("NULL_NAME","""$QBT_TORRENT_NAME""").Replace("NULL_HASH","$QBT_INFOHASH")
 [System.IO.File]::WriteAllText("$NEW_DIR.$QBT_TORRENT_NAME.magnetLINK", $TRANSMISSION)
 
 # Create torrent-name.QBTmagnetLINKwindows from the template file 
 #       QBittorrentWin-reseeder Windows file
-$QBT_WIN = [System.IO.File]::ReadAllText(".\qbtMagnetlinktemplate.ps1").Replace("NULL_NAME","""$QBT_TORRENT_NAME""").Replace("NULL_HASH","$QBT_INFOHASH")
+$QBT_WIN = [System.IO.File]::ReadAllText("C:\Program Files\qBittorrent\qbtMagnetlinktemplate.ps1").Replace("NULL_NAME","""$QBT_TORRENT_NAME""").Replace("NULL_HASH","$QBT_INFOHASH")
 [System.IO.File]::WriteAllText("$NEW_DIR.$QBT_TORRENT_NAME.QBTmagnetLINK.ps1", $QBT_WIN)
 
 
